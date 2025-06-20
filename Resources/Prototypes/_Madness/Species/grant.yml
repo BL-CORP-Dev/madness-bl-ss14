@@ -1,0 +1,117 @@
+- type: species
+  id: Grant
+  name: species-name-grant
+  roundStart: true
+  prototype: MobGrant
+  sprites: MobGrantSprites
+  markingLimits: MobGrantMarkingLimits
+  dollPrototype: MobGrantDummy
+  skinColoration: TintedHues
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.
+- type: speciesBaseSprites
+  id: MobGrantSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobGrantHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Chest: MobGrantTorso
+    HeadTop: MobHumanoidAnyMarking
+    LHand: MobGrantLHand
+    RHand: MobGrantRHand
+    LFoot: MobGrantLFoot
+    RFoot: MobGrantRFoot
+
+- type: markingPoints
+  id: MobGrantMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Chest:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobGrantHead
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobGrantHeadMale
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobGrantHeadFemale
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobGrantTorso
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobGrantTorsoMale
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobGrantTorsoFemale
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobGrantLHand
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobGrantLFoot
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobGrantRHand
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobGrantRFoot
+  baseSprite:
+    sprite: _Madness/Mobs/Species/Grant/parts.rsi
+    state: r_foot

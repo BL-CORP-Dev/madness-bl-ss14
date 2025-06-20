@@ -1,12 +1,12 @@
-- type: species
-  id: Human
-  name: species-name-human
-  roundStart: true
-  prototype: MobHuman
-  sprites: MobHumanSprites
-  markingLimits: MobHumanMarkingLimits
-  dollPrototype: MobHumanDummy
-  skinColoration: HumanToned
+# - type: species
+#   id: Human
+#   name: species-name-human
+#   roundStart: true
+#   prototype: MobHuman
+#   sprites: MobHumanSprites
+#   markingLimits: MobHumanMarkingLimits
+#   dollPrototype: MobHumanDummy
+#   skinColoration: HumanToned
 
 # The lack of a layer means that
 # this person cannot have round-start anything

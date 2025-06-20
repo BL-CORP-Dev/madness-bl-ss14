@@ -15,11 +15,11 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
-  - type: HumanoidAppearance
-    species: Human
-    hideLayersOnEquip:
-    - Hair
-    - Snout
+  # - type: HumanoidAppearance
+  #   species: Human
+  #   hideLayersOnEquip:
+  #   - Hair
+  #   - Snout
   - type: Inventory
     femaleDisplacements:
       jumpsuit:

@@ -46,7 +46,7 @@
   id: DeathSquad
   parent: EventHumanoidCentcomm
   randomizeName: false
-  speciesBlacklist: ['Diona'] # Corvax-MRP
+  # speciesBlacklist: ['Diona'] # Corvax-MRP
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name

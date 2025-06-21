@@ -771,27 +771,27 @@
 
 # Command
 
-- type: entity
-  name: disaster victim spawner
-  id: ChallengeVictimSpawner
-  parent: MarkerBase
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-  - type: Sprite
-    layers:
-      - state: red
-      - sprite: Structures/Decoration/banner.rsi
-        state: banner
-  - type: RandomSpawner
-    prototypes:
-    - RandomHumanoidChallengeVictimCaptain
-    - RandomHumanoidChallengeVictimCE
-    - RandomHumanoidChallengeVictimCMO
-    - RandomHumanoidChallengeVictimHOP
-    - RandomHumanoidChallengeVictimHOS
-    - RandomHumanoidChallengeVictimRD
-    - RandomHumanoidChallengeVictimQM
+# - type: entity
+#   name: disaster victim spawner
+#   id: ChallengeVictimSpawner
+#   parent: MarkerBase
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#   - type: Sprite
+#     layers:
+#       - state: red
+#       - sprite: Structures/Decoration/banner.rsi
+#         state: banner
+#   - type: RandomSpawner
+#     prototypes:
+#     - RandomHumanoidChallengeVictimCaptain
+#     - RandomHumanoidChallengeVictimCE
+#     - RandomHumanoidChallengeVictimCMO
+#     - RandomHumanoidChallengeVictimHOP
+#     - RandomHumanoidChallengeVictimHOS
+#     - RandomHumanoidChallengeVictimRD
+#     - RandomHumanoidChallengeVictimQM
 
 # Security
 

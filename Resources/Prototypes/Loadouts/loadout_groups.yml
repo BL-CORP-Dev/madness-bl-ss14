@@ -74,13 +74,13 @@
   - GlassesJamjar
   - GlassesJensen
 
-- type: loadoutGroup
-  id: GroupTankHarness
-  name: loadout-group-tank-harness
-  minLimit: 1
-  hidden: true
-  loadouts:
-  - LoadoutTankHarness
+# - type: loadoutGroup
+#   id: GroupTankHarness
+#   name: loadout-group-tank-harness
+#   minLimit: 1
+#   hidden: true
+#   loadouts:
+#   - LoadoutTankHarness
 
 - type: loadoutGroup
   id: Survival
@@ -88,9 +88,9 @@
   minLimit: 3
   hidden: true
   loadouts:
-  - EmergencyNitrogen
+  # - EmergencyNitrogen
   - EmergencyOxygen
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -102,12 +102,12 @@
   - LoadoutSpeciesEVAOxygen
 
 # vox get a nitrogen tank, other species get nothing
-- type: loadoutGroup
-  id: GroupEVATankVox
-  name: loadout-group-vox-tank
-  hidden: true
-  loadouts:
-  - LoadoutSpeciesVoxNitrogen
+# - type: loadoutGroup
+#   id: GroupEVATankVox
+#   name: loadout-group-vox-tank
+#   hidden: true
+#   loadouts:
+#   - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: GroupPocketTankDouble
@@ -506,7 +506,7 @@
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: MimeHead
@@ -563,7 +563,7 @@
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -849,7 +849,7 @@
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
 # Science
 - type: loadoutGroup
@@ -1141,7 +1141,7 @@
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1342,7 +1342,7 @@
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
 # Wildcards
 - type: loadoutGroup
@@ -1384,16 +1384,16 @@
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
-  - LoadoutSpeciesVoxNitrogen
+  # - LoadoutSpeciesVoxNitrogen
 
-- type: loadoutGroup
-  id: GroupSpeciesBreathTool
-  name: loadout-group-breath-tool
-  minLimit: 1
-  maxLimit: 1
-  hidden: true
-  loadouts:
-  - LoadoutSpeciesBreathTool
+# - type: loadoutGroup
+#   id: GroupSpeciesBreathTool
+#   name: loadout-group-breath-tool
+#   minLimit: 1
+#   maxLimit: 1
+#   hidden: true
+#   loadouts:
+#   - LoadoutSpeciesBreathTool
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical

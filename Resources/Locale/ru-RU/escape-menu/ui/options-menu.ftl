@@ -342,7 +342,6 @@ ui-options-speech-bubble-text-opacity = Непрозрачность текст�
 ui-options-speech-bubble-speaker-opacity = Непрозрачность диктора речевого пузыря
 ui-options-speech-bubble-background-opacity = Непрозрачность фона речевого пузыря
 ui-options-enable-classic-overlay = Вернуть антаг-оверлей в классический режим
-ui-options-censor-nudity = Цензура обнажённых персонажей
 ui-options-admin-player-panel = Список персонажей в админ меню
 ui-options-admin-playerlist-separate-symbols = Показывать отдельные символы для каждого типа антагониста
 ui-options-admin-playerlist-character-color = Цветные имена антагонистов

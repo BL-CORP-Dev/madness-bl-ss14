@@ -1,134 +1,134 @@
-- type: entity
-  save: false
-  name: Urist McIPC
-  parent: BaseMobSpeciesNotOrganic
-  id: BaseMobIpc
-  abstract: true
-  components:
-  - type: HumanoidAppearance
-    species: Ipc
-  - type: Icon
-    sprite: Corvax/Mobs/Species/Ipc/parts.rsi
-    state: full
-  - type: Body
-    prototype: Ipc
-    requiredLegs: 2
-  - type: Inventory
-    templateId: Ipc
-  - type: ContentEye
-  - type: Speech
-  - type: BodyEmotes
-    soundsId: IpcEmotes
-  - type: Vocal
-    sounds:
-      Male: MaleIpc
-      Female: FemaleIpc
-      Unsexed: MaleIpc
-  - type: MeleeWeapon
-    soundHit:
-      collection: AlienClaw
-    damage:
-      types:
-        Slash: 5
-  - type: Damageable
-    damageContainer: SiliconIpc
-    damageModifierSet: Ipc
-  - type: ToggleableLightVisuals
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 4
-    netsync: false
-  - type: HandheldLight
-    toggleOnInteract: false
-    wattage: 0.2
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      minValue: 0.1
-      maxValue: 2.0
-      isLooped: true
-  - type: TypingIndicator
-    proto: robot
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-    fitsInCharger: true
-  - type: PowerCellDraw
-    drawRate: 0.8
-  # no ToggleCellDraw since dont want to lose access when power is gone
-  - type: AccessReader
-    access: [ ["Ipc"] ]
-  - type: Access
-    enabled: true
-    tags:
-      - Ipc
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: Lock
-    unlockOnClick: false
-  - type: ItemSlotsLock
-    slots:
-    - cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot { }
-  - type: Ipc
-  - type: ZombieImmune
-  - type: Repairable
-    fuelCost: 30
-    doAfterDelay: 20
-    selfRepairPenalty: 2
-  - type: DamagedSiliconAccent
-  - type: Reflect
-    reflectProb: 0.05
-  - type: SleepEmitSound
-    snore: /Audio/Machines/buzz-two.ogg
-    interval: 30
-    popUp: sleep-ipc
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: HeadIpc
-        amount: 1
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Critical
-      200: Dead
-    stateAlertDict:
-      Alive: BorgHealth
-      Critical: BorgCrit
-      Dead: BorgDead
-  - type: Barotrauma
-    damage:
-      types:
-        Blunt: 0 #per second, scales with pressure and other constants.
-        Heat: 0
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#cd7314"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
-  - type: ProtectedFromStepTriggers
-  - type: EyeProtection
+# - type: entity
+#   save: false
+#   name: Urist McIPC
+#   parent: BaseMobSpeciesNotOrganic
+#   id: BaseMobIpc
+#   abstract: true
+#   components:
+#   - type: HumanoidAppearance
+#     species: Ipc
+#   - type: Icon
+#     sprite: Corvax/Mobs/Species/Ipc/parts.rsi
+#     state: full
+#   - type: Body
+#     prototype: Ipc
+#     requiredLegs: 2
+#   - type: Inventory
+#     templateId: Ipc
+#   - type: ContentEye
+#   - type: Speech
+#   - type: BodyEmotes
+#     soundsId: IpcEmotes
+#   - type: Vocal
+#     sounds:
+#       Male: MaleIpc
+#       Female: FemaleIpc
+#       Unsexed: MaleIpc
+#   - type: MeleeWeapon
+#     soundHit:
+#       collection: AlienClaw
+#     damage:
+#       types:
+#         Slash: 5
+#   - type: Damageable
+#     damageContainer: SiliconIpc
+#     damageModifierSet: Ipc
+#   - type: ToggleableLightVisuals
+#   - type: PointLight
+#     enabled: false
+#     mask: /Textures/Effects/LightMasks/cone.png
+#     autoRot: true
+#     radius: 4
+#     netsync: false
+#   - type: HandheldLight
+#     toggleOnInteract: false
+#     wattage: 0.2
+#     blinkingBehaviourId: blinking
+#     radiatingBehaviourId: radiating
+#   - type: LightBehaviour
+#     behaviours:
+#     - !type:FadeBehaviour
+#       id: radiating
+#       maxDuration: 2.0
+#       startValue: 3.0
+#       endValue: 2.0
+#       isLooped: true
+#       reverseWhenFinished: true
+#     - !type:PulseBehaviour
+#       id: blinking
+#       interpolate: Nearest
+#       maxDuration: 1.0
+#       minValue: 0.1
+#       maxValue: 2.0
+#       isLooped: true
+#   - type: TypingIndicator
+#     proto: robot
+#   - type: PowerCellSlot
+#     cellSlotId: cell_slot
+#     fitsInCharger: true
+#   - type: PowerCellDraw
+#     drawRate: 0.8
+#   # no ToggleCellDraw since dont want to lose access when power is gone
+#   - type: AccessReader
+#     access: [ ["Ipc"] ]
+#   - type: Access
+#     enabled: true
+#     tags:
+#       - Ipc
+#   - type: ItemSlots
+#     slots:
+#       cell_slot:
+#         name: power-cell-slot-component-slot-name-default
+#         startingItem: PowerCellMedium
+#   - type: Lock
+#     unlockOnClick: false
+#   - type: ItemSlotsLock
+#     slots:
+#     - cell_slot
+#   - type: ContainerContainer
+#     containers:
+#       cell_slot: !type:ContainerSlot { }
+#   - type: Ipc
+#   - type: ZombieImmune
+#   - type: Repairable
+#     fuelCost: 30
+#     doAfterDelay: 20
+#     selfRepairPenalty: 2
+#   - type: DamagedSiliconAccent
+#   - type: Reflect
+#     reflectProb: 0.05
+#   - type: SleepEmitSound
+#     snore: /Audio/Machines/buzz-two.ogg
+#     interval: 30
+#     popUp: sleep-ipc
+#   - type: Butcherable
+#     butcheringType: Spike
+#     spawned:
+#       - id: HeadIpc
+#         amount: 1
+#   - type: MobThresholds
+#     thresholds:
+#       0: Alive
+#       100: Critical
+#       200: Dead
+#     stateAlertDict:
+#       Alive: BorgHealth
+#       Critical: BorgCrit
+#       Dead: BorgDead
+#   - type: Barotrauma
+#     damage:
+#       types:
+#         Blunt: 0 #per second, scales with pressure and other constants.
+#         Heat: 0
+#   - type: DamageVisuals
+#     damageOverlayGroups:
+#       Brute:
+#         sprite: Mobs/Effects/brute_damage.rsi
+#         color: "#cd7314"
+#       Burn:
+#         sprite: Mobs/Effects/burn_damage.rsi
+#   - type: ProtectedFromStepTriggers
+#   - type: EyeProtection
 
 - type: entity
   save: false
@@ -168,8 +168,8 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+    # - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+    # - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
@@ -384,15 +384,15 @@
     thermalRegulationTemperatureThreshold: 2
 
 
-- type: entity
-  save: false
-  name: Urist McHands
-  parent: MobHumanDummy
-  id: MobIpcDummy
-  categories: [ HideSpawnMenu ]
-  description: A dummy Ipc meant to be used in character setup.
-  components:
-  - type: HumanoidAppearance
-    species: Ipc
-  - type: Inventory
-    templateId: Ipc
+# - type: entity
+#   save: false
+#   name: Urist McHands
+#   parent: MobHumanDummy
+#   id: MobIpcDummy
+#   categories: [ HideSpawnMenu ]
+#   description: A dummy Ipc meant to be used in character setup.
+#   components:
+#   - type: HumanoidAppearance
+#     species: Ipc
+#   - type: Inventory
+#     templateId: Ipc

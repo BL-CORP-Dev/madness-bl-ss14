@@ -87,14 +87,14 @@
 #     species:
 #     - Moth
 
-- type: loadout
-  id: EmergencyOxygenMime
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OxygenBreatherMime
-  storage:
-    back:
-    - BoxMime
+# - type: loadout
+#   id: EmergencyOxygenMime
+#   effects:
+#   - !type:GroupLoadoutEffect
+#     proto: OxygenBreatherMime
+#   storage:
+#     back:
+#     - BoxMime
 
 # - type: loadout
 #   id: EmergencyNitrogenMime
@@ -105,14 +105,14 @@
 #     back:
 #     - BoxMimeNitrogen
 
-- type: loadout
-  id: EmergencySpeciesMothMime
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OxygenBreatherMimeMoth
-  storage:
-    back:
-    - BoxMimeMoth
+# - type: loadout
+#   id: EmergencySpeciesMothMime
+#   effects:
+#   - !type:GroupLoadoutEffect
+#     proto: OxygenBreatherMimeMoth
+#   storage:
+#     back:
+#     - BoxMimeMoth
 
 # Engineering / Extended
 - type: loadout

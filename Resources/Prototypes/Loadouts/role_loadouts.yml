@@ -196,7 +196,7 @@
   - MimeOuterClothing
   - MimeBelt
   - Glasses
-  - SurvivalMime
+  # - SurvivalMime
   - Trinkets
 
 - type: roleLoadout
@@ -376,7 +376,7 @@
   - SurvivalSecurity
   - Trinkets
   - SecurityStar
-  - GroupSpeciesBreathToolSecurity
+  # - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobWarden
@@ -391,7 +391,7 @@
   - SurvivalSecurity
   - Trinkets
   - SecurityStar
-  - GroupSpeciesBreathToolSecurity
+  # - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -407,7 +407,7 @@
   - SurvivalSecurity
   - Trinkets
   - SecurityStar
-  - GroupSpeciesBreathToolSecurity
+  # - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobDetective
@@ -422,7 +422,7 @@
   - SurvivalSecurity
   - Trinkets
   - SecurityStar
-  - GroupSpeciesBreathToolSecurity
+  # - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -432,7 +432,7 @@
   - SecurityBackpack
   - SurvivalSecurity
   - Trinkets
-  - GroupSpeciesBreathToolSecurity
+  # - GroupSpeciesBreathToolSecurity
 
 # Medical
 - type: roleLoadout
@@ -451,7 +451,7 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-  - GroupSpeciesBreathToolMedical
+  # - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -469,7 +469,7 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-  - GroupSpeciesBreathToolMedical
+  # - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -481,7 +481,7 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-  - GroupSpeciesBreathToolMedical
+  # - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
@@ -496,7 +496,7 @@
   - MedicalShoes
   - SurvivalMedical
   - Trinkets
-  - GroupSpeciesBreathToolMedical
+  # - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobParamedic
@@ -513,7 +513,7 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-  - GroupSpeciesBreathToolMedical
+  # - GroupSpeciesBreathToolMedical
 
 # Wildcards
 - type: roleLoadout
@@ -577,10 +577,10 @@
 
 # gives vox a nitrogen breathing tank
 # other species get nothing
-- type: roleLoadout
-  id: RoleSurvivalVoxTank
-  groups:
-  - GroupEVATankVox
+# - type: roleLoadout
+#   id: RoleSurvivalVoxTank
+#   groups:
+#   - GroupEVATankVox
 
 - type: roleLoadout
   id: RoleSurvivalStandard
@@ -606,14 +606,14 @@
   id: RoleSurvivalMedical
   groups:
   - SurvivalMedical
-  - GroupSpeciesBreathToolMedical
+  # - GroupSpeciesBreathToolMedical
   # - GroupTankHarness
 
 - type: roleLoadout
   id: RoleSurvivalSecurity
   groups:
   - SurvivalSecurity
-  - GroupSpeciesBreathToolSecurity
+  # - GroupSpeciesBreathToolSecurity
   # - GroupTankHarness
 
 - type: roleLoadout

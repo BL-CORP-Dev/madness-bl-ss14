@@ -1,9 +1,9 @@
-# - type: guideEntry
-#   id: Species
-#   name: guide-entry-species
-#   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
-#   children:
-    # - Arachnid
+- type: guideEntry
+  id: GrantSpecies
+  name: guide-entry-species
+  text: "/ServerInfo/Guidebook/Mobs/Species.xml"
+  children:
+    - Grant
     # - Diona
     # - Dwarf
     # - Human
@@ -13,10 +13,10 @@
     # - Vulpkanin # Corvax
     # - Vox
 
-# - type: guideEntry
-#   id: Arachnid
-#   name: species-name-arachnid
-#   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+- type: guideEntry
+  id: Grant
+  name: species-name-grant
+  text: "/ServerInfo/_Madness/Mobs/Grant.xml"
 
 # - type: guideEntry
 #   id: Diona

@@ -799,22 +799,22 @@
 
 # Cargo
 
-- type: entity
-  name: challenge cargo technician spawner
-  id: ChallengeCargoTechnicianSpawner
-  parent: MarkerBase
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-  - type: Sprite
-    layers:
-      - state: red
-      - sprite: Structures/Decoration/banner.rsi
-        state: banner_cargo
-  - type: RandomSpawner
-    prototypes:
-    - RandomHumanoidChallengeCargoTechnician
-    chance: 1
+# - type: entity
+#   name: challenge cargo technician spawner
+#   id: ChallengeCargoTechnicianSpawner
+#   parent: MarkerBase
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#   - type: Sprite
+#     layers:
+#       - state: red
+#       - sprite: Structures/Decoration/banner.rsi
+#         state: banner_cargo
+#   - type: RandomSpawner
+#     prototypes:
+#     - RandomHumanoidChallengeCargoTechnician
+#     chance: 1
 
 # Engineering
 
@@ -878,7 +878,7 @@
     - RandomHumanoidVisitorReporter
     - RandomHumanoidVisitorServiceWorker
     - RandomHumanoidVisitorZookeeper
-    - MobSkeletonCloset
+    # - MobSkeletonCloset
 
 - type: entity
   name: NanoTrasen visitor spawner

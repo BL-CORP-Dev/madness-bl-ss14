@@ -1,0 +1,10 @@
+<Document>
+  # Расы
+
+  Невада содержит в себе разные "расы" Грантов, от обычных до немного больших размеров.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobGrant" Caption="Грант"/>
+  </Box>
+
+</Document>

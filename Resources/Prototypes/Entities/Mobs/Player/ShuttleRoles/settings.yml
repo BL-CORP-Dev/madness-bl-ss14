@@ -558,171 +558,171 @@
 # Command
 # Following use EventHumanoidMindShielded since they are heads and probably should have mindshields
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimCaptain
-  parent: EventHumanoidMindShielded
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimCaptain, ChallengeVictimCaptainAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimCaptain
+#   parent: EventHumanoidMindShielded
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimCaptain, ChallengeVictimCaptainAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimChiefEngineer
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimCE, ChallengeVictimCEAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimChiefEngineer
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimCE, ChallengeVictimCEAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimCMO
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimCMO, ChallengeVictimCMOAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimCMO
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimCMO, ChallengeVictimCMOAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimHeadOfPersonnel
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimHOP, ChallengeVictimHOPAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimHeadOfPersonnel
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimHOP, ChallengeVictimHOPAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimHeadOfSecurity
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimHOS, ChallengeVictimHOSAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimHeadOfSecurity
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimHOS, ChallengeVictimHOSAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimResearchDirector
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimRD, ChallengeVictimRDAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimResearchDirector
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimRD, ChallengeVictimRDAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
-- type: randomHumanoidSettings
-  id: ChallengeVictimQuartermaster
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-commander-name
-      description: ghost-role-information-lost-challenge-commander-description
-      rules: ghost-role-information-lost-challenge-commander-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeVictimQM, ChallengeVictimQMAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeVictimQuartermaster
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-commander-name
+#       description: ghost-role-information-lost-challenge-commander-description
+#       rules: ghost-role-information-lost-challenge-commander-rules
+#       raffle:
+#         settings: default
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeVictimQM, ChallengeVictimQMAlt ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
 # Security
 # Following use EventHumanoidMindShielded since they are heads and probably should have mindshields
 
 # Cargo
 
-- type: randomHumanoidSettings
-  id: ChallengeCargoTechnician
-  randomizeName: false
-  components:
-    - type: GhostRole
-      name: ghost-role-information-lost-challenge-cargo-technican-name
-      description: ghost-role-information-lost-challenge-cargo-technican-description
-      rules: ghost-role-information-lost-disaster-challenge-cargo-technican-rules
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ChallengeCargoTechGearSuit, ChallengeCargoTechGearCoat ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-      roleLoadout: [ RoleSurvivalVoxSupport ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+# - type: randomHumanoidSettings
+#   id: ChallengeCargoTechnician
+#   randomizeName: false
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-lost-challenge-cargo-technican-name
+#       description: ghost-role-information-lost-challenge-cargo-technican-description
+#       rules: ghost-role-information-lost-disaster-challenge-cargo-technican-rules
+#       raffle:
+#         settings: short
+#     - type: GhostTakeoverAvailable
+#     - type: Loadout
+#       prototypes: [ ChallengeCargoTechGearSuit, ChallengeCargoTechGearCoat ] #!! This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#       roleLoadout: [ RoleSurvivalVoxSupport ]
+#     - type: RandomMetadata
+#       nameSegments:
+#       - NamesFirst
+#       - NamesLast
+#       nameFormat: name-format-standard
 
 # Engineering
 

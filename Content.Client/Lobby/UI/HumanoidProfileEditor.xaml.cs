@@ -105,7 +105,7 @@ namespace Content.Client.Lobby.UI
         private bool _isDirty;
 
         [ValidatePrototypeId<GuideEntryPrototype>]
-        private const string DefaultSpeciesGuidebook = "Species";
+        private const string DefaultSpeciesGuidebook = "GrantSpecies"; // _Madness Edit
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 

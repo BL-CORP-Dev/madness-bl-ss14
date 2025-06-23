@@ -680,20 +680,24 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(noGravity);
 
-        var reptilianName = Loc.GetString("admin-smite-reptilian-species-swap-name").ToLowerInvariant();
-        Verb reptilian = new()
-        {
-            Text = reptilianName,
-            Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/toys.rsi"), "plushie_lizard"),
-            Act = () =>
-            {
-                _polymorphSystem.PolymorphEntity(args.Target, "AdminLizardSmite");
-            },
-            Impact = LogImpact.Extreme,
-            Message = string.Join(": ", reptilianName, Loc.GetString("admin-smite-reptilian-species-swap-description"))
-        };
-        args.Verbs.Add(reptilian);
+        // _Madness Edit Start
+
+        // var reptilianName = Loc.GetString("admin-smite-reptilian-species-swap-name").ToLowerInvariant();
+        // Verb reptilian = new()
+        // {
+        //     Text = reptilianName,
+        //     Category = VerbCategory.Smite,
+        //     Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/toys.rsi"), "plushie_lizard"),
+        //     Act = () =>
+        //     {
+        //         _polymorphSystem.PolymorphEntity(args.Target, "AdminLizardSmite");
+        //     },
+        //     Impact = LogImpact.Extreme,
+        //     Message = string.Join(": ", reptilianName, Loc.GetString("admin-smite-reptilian-species-swap-description"))
+        // };
+        // args.Verbs.Add(reptilian);
+
+        // _Madness Edit End
 
         var lockerName = Loc.GetString("admin-smite-locker-stuff-name").ToLowerInvariant();
         Verb locker = new()

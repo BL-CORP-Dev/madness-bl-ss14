@@ -25,7 +25,7 @@
   text: "/ServerInfo/Guidebook/NewPlayer/CharacterCreation.xml"
   children:
   - YourFirstCharacter
-  - Species
+  - GrantSpecies # _Madness Edit
 
 - type: guideEntry
   id: YourFirstCharacter

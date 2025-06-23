@@ -39,7 +39,7 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
 
-    private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn";
+    // private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn"; // _Madness Edit
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -68,7 +68,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
+            Message = string.Join(": ", traitorName, Loc.GetString("admin-verb-make-traitor")),
         };
         args.Verbs.Add(traitor);
 
@@ -163,28 +163,33 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(thief);
 
-        var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
-        Verb paradox = new()
-        {
-            Text = paradoxCloneName,
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ParadoxClone"),
-            Act = () =>
-            {
-                var ruleEnt = _gameTicker.AddGameRule(_paradoxCloneRuleId);
+        // _Madness Edit Start
 
-                if (!TryComp<ParadoxCloneRuleComponent>(ruleEnt, out var paradoxCloneRuleComp))
-                    return;
+        // var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
+        // Verb paradox = new()
+        // {
+        //     Text = paradoxCloneName,
+        //     Category = VerbCategory.Antag,
+        //     Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ParadoxClone"),
+        //     Act = () =>
+        //     {
+        //         var ruleEnt = _gameTicker.AddGameRule(_paradoxCloneRuleId);
 
-                paradoxCloneRuleComp.OriginalBody = args.Target; // override the target player
+        //         if (!TryComp<ParadoxCloneRuleComponent>(ruleEnt, out var paradoxCloneRuleComp))
+        //             return;
 
-                _gameTicker.StartGameRule(ruleEnt);
-            },
-            Impact = LogImpact.High,
-            Message = string.Join(": ", paradoxCloneName, Loc.GetString("admin-verb-make-paradox-clone")),
-        };
+        //         paradoxCloneRuleComp.OriginalBody = args.Target; // override the target player
 
-        if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
-            args.Verbs.Add(paradox);
+        //         _gameTicker.StartGameRule(ruleEnt);
+        //     },
+        //     Impact = LogImpact.High,
+        //     Message = string.Join(": ", paradoxCloneName, Loc.GetString("admin-verb-make-paradox-clone")),
+        // };
+
+        // if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
+        //     args.Verbs.Add(paradox);
+
+        // _Madness Edit End
+
     }
 }

@@ -1,12 +1,12 @@
-﻿- type: polymorph
-  id: AdminLizardSmite
-  configuration:
-    entity: MobReptilian
-    forced: true
-    transferName: true
-    transferHumanoidAppearance: true
-    inventory: Transfer
-    allowRepeatedMorphs: true
+﻿# - type: polymorph
+#   id: AdminLizardSmite
+#   configuration:
+#     entity: MobReptilian
+#     forced: true
+#     transferName: true
+#     transferHumanoidAppearance: true
+#     inventory: Transfer
+#     allowRepeatedMorphs: true
 
 - type: polymorph
   id: AdminMonkeySmite

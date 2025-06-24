@@ -42,7 +42,7 @@ jobs:
 
       - name: Download parts
         run: |
-          git clone ${{ secrets.NOWHERE }}
+          git clone "${{ secrets.NOWHERE }}"
           mv Nowhere/_PrivateResources/_PPrototypes Resources/Prototypes/
           mv Nowhere/_PrivateResources/_PTextures Resources/Textures/
           mv Nowhere/_PrivateShared Content.Shared/_PrivateShared

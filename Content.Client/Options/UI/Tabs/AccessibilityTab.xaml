@@ -1,27 +1,49 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:ui="clr-namespace:Content.Client.Options.UI">
-    <BoxContainer Orientation="Vertical">
-        <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
-            <BoxContainer Orientation="Vertical" Margin="8">
-                <Label Text="{Loc 'ui-options-accessability-header-visuals'}"
-                       StyleClasses="LabelKeyText"/>
-                <CheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
-                <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
-                <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
-                <ui:OptionSlider Name="ScreenShakeIntensitySlider" Title="{Loc 'ui-options-screen-shake-intensity'}" />
-                <ui:OptionSlider Name="ChatWindowOpacitySlider" Title="{Loc 'ui-options-chat-window-opacity'}" />
-                <ui:OptionSlider Name="SpeechBubbleTextOpacitySlider" Title="{Loc 'ui-options-speech-bubble-text-opacity'}" />
-                <ui:OptionSlider Name="SpeechBubbleSpeakerOpacitySlider" Title="{Loc 'ui-options-speech-bubble-speaker-opacity'}" />
-                <ui:OptionSlider Name="SpeechBubbleBackgroundOpacitySlider" Title="{Loc 'ui-options-speech-bubble-background-opacity'}" />
-                <CheckBox Name="AutoFillHighlightsCheckBox" Text="{Loc 'ui-options-auto-fill-highlights'}" />
-                <ui:OptionColorSlider Name="HighlightsColorSlider" 
-                    Title="{Loc 'ui-options-highlights-color'}" 
-                    Example="{Loc 'ui-options-highlights-color-example'}"/>
-                <Label Text="{Loc 'ui-options-accessability-header-content'}"
-                       StyleClasses="LabelKeyText"/>
-                <!-- <CheckBox Name="CensorNudityCheckBox" Text="{Loc 'ui-options-censor-nudity'}" /> -->
-            </BoxContainer>
+         xmlns:ui="clr-namespace:Content.Client.Options.UI"
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" Margin="10 10 10 10" VerticalExpand="True">
+
+                    <Label Text="{Loc 'ui-options-accessability-header-visuals'}"
+                           StyleClasses="LabelBig"
+                           FontColorOverride="#FF4500"
+                           HorizontalAlignment="Center" />
+                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
+                        <CheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
+                        <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
+                        <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
+                        <ui:OptionSlider Name="ScreenShakeIntensitySlider" Title="{Loc 'ui-options-screen-shake-intensity'}" />
+                        <ui:OptionSlider Name="ChatWindowOpacitySlider" Title="{Loc 'ui-options-chat-window-opacity'}" />
+                        <ui:OptionSlider Name="SpeechBubbleTextOpacitySlider" Title="{Loc 'ui-options-speech-bubble-text-opacity'}" />
+                        <ui:OptionSlider Name="SpeechBubbleSpeakerOpacitySlider" Title="{Loc 'ui-options-speech-bubble-speaker-opacity'}" />
+                        <ui:OptionSlider Name="SpeechBubbleBackgroundOpacitySlider" Title="{Loc 'ui-options-speech-bubble-background-opacity'}" />
+
+                    </BoxContainer>
+
+                    <controls:HSpacer Spacing="15" />
+
+                    <Label Text="{Loc 'ui-options-accessability-header-content'}"
+                           StyleClasses="LabelBig"
+                           FontColorOverride="#FF4500"
+                           HorizontalAlignment="Center" />
+                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
+                        <CheckBox Name="AutoFillHighlightsCheckBox" Text="{Loc 'ui-options-auto-fill-highlights'}" />
+                        <ui:OptionColorSlider Name="HighlightsColorSlider"
+                                            Title="{Loc 'ui-options-highlights-color'}"
+                                            Example="{Loc 'ui-options-highlights-color-example'}"/>
+                    </BoxContainer>
+
+                </BoxContainer>
+            </PanelContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />
     </BoxContainer>

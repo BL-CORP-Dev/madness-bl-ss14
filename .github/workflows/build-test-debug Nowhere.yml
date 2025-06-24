@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    if: github.actor != 'IanComradeBot' && github.event.pull_request.draft == false
+    if: ${{ vars.SECRETSLINK != '' }}
     strategy:
       matrix:
         os: [ubuntu-latest]

@@ -1,21 +1,36 @@
 ﻿<Control xmlns="https://spacestation14.io"
-         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
-    <BoxContainer Orientation="Vertical">
-        <ScrollContainer VerticalExpand="True">
-            <BoxContainer Name="KeybindsContainer" Orientation="Vertical" Margin="8 8 8 8">
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" Margin="10 10 10 10" VerticalExpand="True">
 
-                <!-- Keybind buttons are added here in the C# code -->
+                    <Label Text="{Loc 'ui-options-keybinds-label'}"
+                           StyleClasses="LabelBig"
+                           FontColorOverride="#FF4500"
+                           HorizontalAlignment="Center" />
+                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HSpacer Spacing="10" />
 
-            </BoxContainer>
+                    <BoxContainer Name="KeybindsContainer" Orientation="Vertical" Margin="0 0 0 0" VerticalExpand="True">
+                        </BoxContainer>
+
+                </BoxContainer>
+            </PanelContainer>
         </ScrollContainer>
+
         <controls:StripeBack HasBottomEdge="False" HasMargins="False">
             <BoxContainer Orientation="Horizontal" Margin="8 8">
-                <Control MinSize="8 0" />
-                <Label Text="{Loc 'ui-options-binds-explanation'}" StyleClasses="LabelSubText" />
-                <Button Name="ResetAllButton"
+                <Label Text="{Loc 'ui-options-binds-explanation'}" StyleClasses="LabelSubText" VerticalAlignment="Center" />
+                <Control MinSize="8 0" HorizontalExpand="True" /> <Button Name="ResetAllButton"
                         Text="{Loc 'ui-options-binds-reset-all'}"
-                        HorizontalExpand="True"
-                        HorizontalAlignment="Right" />
+                        HorizontalAlignment="Right"
+                        Access="Public" />
             </BoxContainer>
         </controls:StripeBack>
     </BoxContainer>

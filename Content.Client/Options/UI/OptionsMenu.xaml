@@ -2,7 +2,7 @@
                xmlns:tabs="clr-namespace:Content.Client.Options.UI.Tabs"
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="{Loc 'ui-options-title'}"
-               MinSize="800 450">
+               MinSize="800 500">
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Vertical" Margin="10 10 10 10">
         <PanelContainer VerticalExpand="True" HorizontalExpand="True">
             <PanelContainer.PanelOverride>

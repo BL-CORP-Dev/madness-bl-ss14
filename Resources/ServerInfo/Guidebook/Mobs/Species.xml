@@ -1,19 +1,10 @@
 <Document>
   # Расы
 
-  Нанотразен нанимает разнообразные разумные виды.
+  Невада содержит в себе разные "расы" Грантов, от обычных до немного больших размеров.
 
   <Box>
-  <GuideEntityEmbed Entity="MobArachnid" Caption="Арахнид"/>
-  <GuideEntityEmbed Entity="MobDiona" Caption="Диона"/>
-  <GuideEntityEmbed Entity="MobDwarf" Caption="Дворф"/>
-  <GuideEntityEmbed Entity="MobHuman" Caption="Человек"/>
-  </Box>
-  <Box>
-  <GuideEntityEmbed Entity="MobMoth" Caption="Ниан"/>
-  <GuideEntityEmbed Entity="MobReptilian" Caption="Унатх"/>
-  <GuideEntityEmbed Entity="MobVulpkanin" Caption="Вульпканин"/>
-  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Слаймолюд"/>
+    <GuideEntityEmbed Entity="MobGrant" Caption="Грант"/>
   </Box>
 
 </Document>

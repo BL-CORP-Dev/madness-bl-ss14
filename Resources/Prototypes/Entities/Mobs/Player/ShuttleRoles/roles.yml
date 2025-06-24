@@ -493,112 +493,112 @@
 
 # Command
 
-- type: entity
-  id: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim Captain ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: Sprite
-      sprite: Mobs/Species/Skeleton/parts.rsi
-      state: skull_icon
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimCaptain
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim Captain ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: Sprite
+#       sprite: Mobs/Species/Skeleton/parts.rsi
+#       state: skull_icon
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimCaptain
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
-- type: entity
-  id: RandomHumanoidChallengeVictimCE
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim CE ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimChiefEngineer
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimCE
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim CE ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimChiefEngineer
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
-- type: entity
-  id: RandomHumanoidChallengeVictimCMO
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim CMO ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimCMO
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimCMO
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim CMO ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimCMO
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
-- type: entity
-  id: RandomHumanoidChallengeVictimHOP
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim HOP ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimHeadOfPersonnel
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimHOP
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim HOP ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimHeadOfPersonnel
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
-- type: entity
-  id: RandomHumanoidChallengeVictimHOS
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim HOS ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimHeadOfSecurity
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimHOS
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim HOS ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimHeadOfSecurity
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
-- type: entity
-  id: RandomHumanoidChallengeVictimRD
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim RD ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimResearchDirector
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimRD
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim RD ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimResearchDirector
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
-- type: entity
-  id: RandomHumanoidChallengeVictimQM
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim QM ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeVictimQuartermaster
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+# - type: entity
+#   id: RandomHumanoidChallengeVictimQM
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster victim QM ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeVictimQuartermaster
+#     - type: AutoImplant
+#       implants:
+#       - MindShieldImplant
 
 # Security
 
 # Cargo
 
-- type: entity
-  id: RandomHumanoidChallengeCargoTechnician
-  parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster cargo technician ghost role
-  suffix: CHALLENGE
-  # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ChallengeCargoTechnician
+# - type: entity
+#   id: RandomHumanoidChallengeCargoTechnician
+#   parent: RandomHumanoidChallengeVictimCaptain
+#   name: disaster cargo technician ghost role
+#   suffix: CHALLENGE
+#   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
+#   components:
+#     - type: RandomHumanoidSpawner
+#       settings: ChallengeCargoTechnician
 
 # Engineering
 

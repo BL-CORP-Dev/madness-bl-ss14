@@ -101,8 +101,8 @@
   - type: NukeopsRule
   - type: RuleGrids
   - type: AntagSelection
-  # - type: AntagLoadProfileRule
-  #   speciesOverride: Human
+  - type: AntagLoadProfileRule
+    speciesOverride: Grant
   #   speciesOverrideBlacklist:
     #Species that do not work with nukies should be included in this list.
     #Once the issues are fixed the species should be removed from this list to be enabled.

@@ -1,0 +1,31 @@
+- type: lobbyBackground
+  id: Hank
+  background: /Textures/_Madness/LobbyScreens/hank.webp
+
+- type: lobbyBackground
+  id: CalmMoment
+  background: /Textures/_Madness/LobbyScreens/calm_moment.webp
+
+- type: lobbyBackground
+  id: HankTwo
+  background: /Textures/_Madness/LobbyScreens/hank_two.webp
+
+- type: lobbyBackground
+  id: HankThree
+  background: /Textures/_Madness/LobbyScreens/hank_three.webp
+
+- type: lobbyBackground
+  id: Sanford
+  background: /Textures/_Madness/LobbyScreens/sanford.webp
+
+- type: lobbyBackground
+  id: Machine
+  background: /Textures/_Madness/LobbyScreens/machine.webp
+
+- type: lobbyBackground
+  id: Spike
+  background: /Textures/_Madness/LobbyScreens/spike.webp
+
+- type: lobbyBackground
+  id: Nevada
+  background: /Textures/_Madness/LobbyScreens/nevada.webp

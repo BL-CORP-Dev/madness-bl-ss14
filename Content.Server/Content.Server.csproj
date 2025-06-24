@@ -17,6 +17,7 @@
     <PackageReference Include="Discord.Net" />
     <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
   </ItemGroup>
+  <Import Project="..\Content.Shared\_PrivateShared\Madness_GlobalDefines.props" Condition="Exists('..\Content.Shared\_PrivateShared\Madness_GlobalDefines.props')" />
   <ItemGroup>
     <ProjectReference Include="..\Content.Packaging\Content.Packaging.csproj" />
     <ProjectReference Include="..\Content.Server.Database\Content.Server.Database.csproj" />

@@ -193,7 +193,7 @@ namespace Content.Client.Lobby.UI
             SexButton.OnItemSelected += args =>
             {
                 SexButton.SelectId(args.Id);
-                SetSex((Sex)args.Id);
+                SetSex((Sex) args.Id);
             };
 
             #endregion Sex
@@ -220,7 +220,7 @@ namespace Content.Client.Lobby.UI
             PronounsButton.OnItemSelected += args =>
             {
                 PronounsButton.SelectId(args.Id);
-                SetGender((Gender)args.Id);
+                SetGender((Gender) args.Id);
             };
 
             #endregion Gender
@@ -326,7 +326,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            HairStylePicker.OnSlotAdd += delegate ()
+            HairStylePicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
@@ -346,7 +346,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            FacialHairPicker.OnSlotAdd += delegate ()
+            FacialHairPicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
@@ -372,20 +372,20 @@ namespace Content.Client.Lobby.UI
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
             {
-                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int)value);
+                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int) value);
             }
 
             SpawnPriorityButton.OnItemSelected += args =>
             {
                 SpawnPriorityButton.SelectId(args.Id);
-                SetSpawnPriority((SpawnPriorityPreference)args.Id);
+                SetSpawnPriority((SpawnPriorityPreference) args.Id);
             };
 
             #endregion SpawnPriority
 
             #region Eyes
 
-            EyeColorPicker.OnEyeColorPicked += newColor =>
+            /* EyeColorPicker.OnEyeColorPicked += newColor =>
             {
                 if (Profile is null)
                     return;
@@ -393,7 +393,7 @@ namespace Content.Client.Lobby.UI
                     Profile.Appearance.WithEyeColor(newColor));
                 Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
                 ReloadProfilePreview();
-            };
+            }; */
 
             #endregion Eyes
 
@@ -405,16 +405,16 @@ namespace Content.Client.Lobby.UI
 
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
-                (int)PreferenceUnavailableMode.StayInLobby);
+                (int) PreferenceUnavailableMode.StayInLobby);
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
                               ("overflowJob", Loc.GetString(SharedGameTicker.FallbackOverflowJobName))),
-                (int)PreferenceUnavailableMode.SpawnAsOverflow);
+                (int) PreferenceUnavailableMode.SpawnAsOverflow);
 
             PreferenceUnavailableButton.OnItemSelected += args =>
             {
                 PreferenceUnavailableButton.SelectId(args.Id);
-                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode)args.Id);
+                Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode) args.Id);
                 SetDirty();
             };
 
@@ -592,7 +592,7 @@ namespace Content.Client.Lobby.UI
                 {
                     TraitsList.AddChild(new Label
                     {
-                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", category.MaxTraitPoints)),
+                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount) ,("max", category.MaxTraitPoints)),
                         FontColorOverride = Color.Gray
                     });
                 }
@@ -750,6 +750,18 @@ namespace Content.Client.Lobby.UI
             SpriteView3.SetEntity(PreviewDummy);
             SpriteView4.SetEntity(PreviewDummy);
 
+            // Обновляем JobSpriteView
+            if (JobSpriteView1 != null) JobSpriteView1.SetEntity(PreviewDummy);
+            if (JobSpriteView2 != null) JobSpriteView2.SetEntity(PreviewDummy);
+            if (JobSpriteView3 != null) JobSpriteView3.SetEntity(PreviewDummy);
+            if (JobSpriteView4 != null) JobSpriteView4.SetEntity(PreviewDummy);
+
+            // Обновляем MarkingSpriteView
+            if (MarkingSpriteView1 != null) MarkingSpriteView1.SetEntity(PreviewDummy);
+            if (MarkingSpriteView2 != null) MarkingSpriteView2.SetEntity(PreviewDummy);
+            if (MarkingSpriteView3 != null) MarkingSpriteView3.SetEntity(PreviewDummy);
+            if (MarkingSpriteView4 != null) MarkingSpriteView4.SetEntity(PreviewDummy);
+
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
 
             // Update rotation for all sprite views
@@ -765,7 +777,7 @@ namespace Content.Client.Lobby.UI
         public void ResetToDefault()
         {
             SetProfile(
-                (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter,
+                (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
                 _preferencesManager.Preferences?.SelectedCharacterIndex);
         }
 
@@ -804,7 +816,7 @@ namespace Content.Client.Lobby.UI
 
             if (Profile != null)
             {
-                PreferenceUnavailableButton.SelectId((int)Profile.PreferenceUnavailable);
+                PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
             }
         }
 
@@ -840,7 +852,7 @@ namespace Content.Client.Lobby.UI
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
                 //TODO: Don't close the guidebook if its already open, just go to the correct page
-                guidebookController.OpenGuidebook(dict, includeChildren: true, selected: page);
+                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
             }
         }
 
@@ -902,7 +914,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
                         Children =
                         {
                             new Label
@@ -957,7 +969,7 @@ namespace Content.Client.Lobby.UI
 
                     selector.OnSelected += selectedPrio =>
                     {
-                        var selectedJobPrio = (JobPriority)selectedPrio;
+                        var selectedJobPrio = (JobPriority) selectedPrio;
                         Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
 
                         foreach (var (jobId, other) in _jobPriorities)
@@ -969,7 +981,7 @@ namespace Content.Client.Lobby.UI
                                 continue;
                             }
 
-                            if (selectedJobPrio != JobPriority.High || (JobPriority)other.Selected != JobPriority.High)
+                            if (selectedJobPrio != JobPriority.High || (JobPriority) other.Selected != JobPriority.High)
                                 continue;
 
                             // Lower any other high priorities to medium.
@@ -1124,7 +1136,7 @@ namespace Content.Client.Lobby.UI
                             RgbSkinColorContainer.Visible = false;
                         }
 
-                        var color = SkinColor.HumanSkinTone((int)Skin.Value);
+                        var color = SkinColor.HumanSkinTone((int) Skin.Value);
 
                         Markings.CurrentSkinColor = color;
                         Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
@@ -1311,7 +1323,7 @@ namespace Content.Client.Lobby.UI
             foreach (var (jobId, prioritySelector) in _jobPriorities)
             {
                 var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
-                prioritySelector.Select((int)priority);
+                prioritySelector.Select((int) priority);
             }
         }
 
@@ -1340,13 +1352,13 @@ namespace Content.Client.Lobby.UI
             // add button for each sex
             foreach (var sex in sexes)
             {
-                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int)sex);
+                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
             }
 
             if (sexes.Contains(Profile.Sex))
-                SexButton.SelectId((int)Profile.Sex);
+                SexButton.SelectId((int) Profile.Sex);
             else
-                SexButton.SelectId((int)sexes[0]);
+                SexButton.SelectId((int) sexes[0]);
         }
 
         private void UpdateSkinColor()
@@ -1448,7 +1460,7 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-            PronounsButton.SelectId((int)Profile.Gender);
+            PronounsButton.SelectId((int) Profile.Gender);
         }
 
         private void UpdateSpawnPriorityControls()
@@ -1458,7 +1470,7 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-            SpawnPriorityButton.SelectId((int)Profile.SpawnPriority);
+            SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
         }
 
         private void UpdateHairPickers()
@@ -1498,7 +1510,7 @@ namespace Content.Client.Lobby.UI
 
             // hair color
             Color? hairColor = null;
-            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto)
             )
             {
@@ -1516,7 +1528,7 @@ namespace Content.Client.Lobby.UI
             }
             if (hairColor != null)
             {
-                Markings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
+                Markings.HairMarking = new (Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
             }
             else
             {
@@ -1533,7 +1545,7 @@ namespace Content.Client.Lobby.UI
 
             // facial hair color
             Color? facialHairColor = null;
-            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto))
             {
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, facialHairProto, _prototypeManager))
@@ -1550,7 +1562,7 @@ namespace Content.Client.Lobby.UI
             }
             if (facialHairColor != null)
             {
-                Markings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
+                Markings.FacialHairMarking = new (Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
             }
             else
             {
@@ -1566,7 +1578,7 @@ namespace Content.Client.Lobby.UI
             }
 
             Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
+            /* EyeColorPicker.SetData(Profile.Appearance.EyeColor); */
         }
 
         private void UpdateSaveButton()
@@ -1577,18 +1589,23 @@ namespace Content.Client.Lobby.UI
 
         private void SetPreviewRotation(Direction direction)
         {
-            // Apply different rotations to each SpriteView
-            // This assumes SpriteView1-4 are declared in XAML and accessible via auto-generated references.
-            SpriteView1.OverrideDirection = Direction.South; // Front view
-            SpriteView2.OverrideDirection = Direction.North; // Back view
-            SpriteView3.OverrideDirection = Direction.East;  // Right view
-            SpriteView4.OverrideDirection = Direction.West;  // Left view
+            // Обновляем основные SpriteView (для вкладки Appearance)
+            SpriteView1.OverrideDirection = Direction.South;
+            SpriteView2.OverrideDirection = Direction.North;
+            SpriteView3.OverrideDirection = Direction.East;
+            SpriteView4.OverrideDirection = Direction.West;
 
-            // If you want to cycle all 4 through the _previewRotation, you'd do something more complex:
-            // SpriteView1.OverrideDirection = direction;
-            // SpriteView2.OverrideDirection = direction.TurnCw();
-            // SpriteView3.OverrideDirection = direction.TurnCw().TurnCw();
-            // SpriteView4.OverrideDirection = direction.TurnCcw();
+            // Добавляем обновление для JobSpriteView
+            if (JobSpriteView1 != null) JobSpriteView1.OverrideDirection = Direction.South;
+            if (JobSpriteView2 != null) JobSpriteView2.OverrideDirection = Direction.North;
+            if (JobSpriteView3 != null) JobSpriteView3.OverrideDirection = Direction.East;
+            if (JobSpriteView4 != null) JobSpriteView4.OverrideDirection = Direction.West;
+
+            // Добавляем обновление для MarkingSpriteView
+            if (MarkingSpriteView1 != null) MarkingSpriteView1.OverrideDirection = Direction.South;
+            if (MarkingSpriteView2 != null) MarkingSpriteView2.OverrideDirection = Direction.North;
+            if (MarkingSpriteView3 != null) MarkingSpriteView3.OverrideDirection = Direction.East;
+            if (MarkingSpriteView4 != null) MarkingSpriteView4.OverrideDirection = Direction.West;
         }
 
         private void RandomizeEverything()

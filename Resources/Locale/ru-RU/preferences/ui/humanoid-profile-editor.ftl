@@ -1,6 +1,6 @@
 humanoid-profile-editor-randomize-everything-button = Случайный персонаж
 humanoid-profile-editor-name-label = Имя:
-humanoid-profile-editor-name-random-button = Сгенерировать
+humanoid-profile-editor-name-random-button = Сгенерировать имя
 humanoid-profile-editor-appearance-tab = Внешность
 humanoid-profile-editor-clothing = Отображать одежду
 humanoid-profile-editor-clothing-show = Переключить

@@ -254,7 +254,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         if (FacialHairStyleId != other.FacialHairStyleId) return false;
         if (!FacialHairColor.Equals(other.FacialHairColor)) return false;
         if (!EyeColor.Equals(other.EyeColor)) return false;
-        if (!SkinColor.Equals(other.SkinColor)) return false;
+        //if (!SkinColor.Equals(other.SkinColor)) return false; // Madness edit
         if (!Markings.SequenceEqual(other.Markings)) return false;
         return true;
     }

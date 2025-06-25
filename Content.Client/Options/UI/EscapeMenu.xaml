@@ -1,18 +1,146 @@
 ﻿<ui1:EscapeMenu xmlns="https://spacestation14.io"
-            xmlns:changelog="clr-namespace:Content.Client.Changelog"
-            xmlns:ui="clr-namespace:Content.Client.Voting.UI"
-            xmlns:ui1="clr-namespace:Content.Client.Options.UI"
-            Title="{Loc 'ui-escape-title'}"
-            Resizable="False">
+                xmlns:changelog="clr-namespace:Content.Client.Changelog"
+                xmlns:ui="clr-namespace:Content.Client.Voting.UI"
+                xmlns:ui1="clr-namespace:Content.Client.Options.UI"
+                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                Title="{Loc 'ui-escape-title'}"
+                Resizable="False">
 
-    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
-        <changelog:ChangelogButton Access="Public" Name="ChangelogButton"/>
-        <ui:VoteCallMenuButton />
-        <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" />
-        <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" />
-        <Button Access="Public" Name="GuidebookButton" Text="{Loc 'ui-escape-guidebook'}" />
-        <Button Access="Public" Name="WikiButton" Text="{Loc 'ui-escape-wiki'}" />
-        <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" />
-        <Button Access="Public" Name="QuitButton" Text="{Loc 'ui-escape-quit'}" />
-    </BoxContainer>
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BackgroundColor="#121212" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+
+            <PanelContainer MinWidth="400" MaxWidth="400" HorizontalAlignment="Center" Margin="0 0 0 16">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                </PanelContainer.PanelOverride>
+
+                <PanelContainer Margin="2">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                    </PanelContainer.PanelOverride>
+                    <BoxContainer Orientation="Vertical" Margin="20 20 20 20" HorizontalAlignment="Center">
+                        <Label Text="PAUSED"
+                               StyleClasses="LabelBig"
+                               FontColorOverride="#FFFFFF"
+                               HorizontalAlignment="Center"
+                               Margin="0 0 0 8"/>
+                        <Label Text="Quit if you like. I've given up on you already."
+                               FontColorOverride="#CD5C5C"
+                               HorizontalAlignment="Center"
+                               MaxWidth="300"
+                               Margin="0 0 0 12"/>
+                    </BoxContainer>
+                </PanelContainer>
+            </PanelContainer>
+
+            <BoxContainer Orientation="Vertical" SeparationOverride="8" HorizontalAlignment="Center" Margin="0 10 0 0">
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <changelog:ChangelogButton Access="Public" Name="ChangelogButton" Text="{Loc 'ui-escape-changelog'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </changelog:ChangelogButton>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <ui:VoteCallMenuButton Access="Public" Name="VoteCallButton" Text="{Loc 'ui-escape-vote'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </ui:VoteCallMenuButton>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </Button>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </Button>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <Button Access="Public" Name="GuidebookButton" Text="{Loc 'ui-escape-guidebook'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </Button>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <Button Access="Public" Name="WikiButton" Text="{Loc 'ui-escape-wiki'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </Button>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </Button>
+                </PanelContainer>
+
+                <PanelContainer MinWidth="180" MinHeight="40">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                    <Button Access="Public" Name="QuitButton" Text="{Loc 'ui-escape-quit'}" HorizontalExpand="True" VerticalExpand="True" Margin="2">
+                        <Button.StyleBoxOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                        </Button.StyleBoxOverride>
+                    </Button>
+                </PanelContainer>
+            </BoxContainer>
+
+            <Control MinHeight="20"/>
+
+            <BoxContainer Orientation="Horizontal" SeparationOverride="40" HorizontalAlignment="Center" Margin="0 20 0 0">
+                <PanelContainer MinWidth="80" MinHeight="4" HorizontalAlignment="Left">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                </PanelContainer>
+                <PanelContainer MinWidth="80" MinHeight="4" HorizontalAlignment="Right">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" />
+                    </PanelContainer.PanelOverride>
+                </PanelContainer>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
 </ui1:EscapeMenu>

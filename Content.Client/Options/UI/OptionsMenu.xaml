@@ -3,19 +3,63 @@
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="{Loc 'ui-options-title'}"
                MinSize="800 500">
-    <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Vertical" Margin="10 10 10 10">
-        <PanelContainer VerticalExpand="True" HorizontalExpand="True">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
-            </PanelContainer.PanelOverride>
-            <TabContainer Name="Tabs" Access="Public" Margin="10 10 10 10">
-                <tabs:MiscTab Name="MiscTab" />
-                <tabs:GraphicsTab Name="GraphicsTab" />
-                <tabs:KeyRebindTab Name="KeyRebindTab" />
-                <tabs:AudioTab Name="AudioTab" />
-                <tabs:AccessibilityTab Name="AccessibilityTab" />
-                <tabs:AdminOptionsTab Name="AdminOptionsTab" />
-            </TabContainer>
-        </PanelContainer>
-    </BoxContainer>
+
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BackgroundColor="#121212" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Vertical" Margin="10 10 10 10">
+
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="10" Margin="0 0 0 10">
+                <PanelContainer MinWidth="100" MinHeight="2">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+                <PanelContainer MinWidth="50" MinHeight="2">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+            </BoxContainer>
+
+            <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /> </PanelContainer.PanelOverride>
+
+                <PanelContainer Margin="2" VerticalExpand="True" HorizontalExpand="True">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" /> </PanelContainer.PanelOverride>
+
+                    <TabContainer Name="Tabs" Access="Public" Margin="10 10 10 10">
+                        <tabs:MiscTab Name="MiscTab" />
+                        <tabs:GraphicsTab Name="GraphicsTab" />
+                        <tabs:KeyRebindTab Name="KeyRebindTab" />
+                        <tabs:AudioTab Name="AudioTab" />
+                        <tabs:AccessibilityTab Name="AccessibilityTab" />
+                        <tabs:AdminOptionsTab Name="AdminOptionsTab" />
+                    </TabContainer>
+                </PanelContainer>
+            </PanelContainer>
+
+            <Control MinHeight="20"/> <BoxContainer Orientation="Horizontal" SeparationOverride="20" HorizontalAlignment="Center" Margin="0 20 0 0">
+                <PanelContainer MinWidth="60" MinHeight="4" HorizontalAlignment="Left">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+                <PanelContainer MinWidth="30" MinHeight="4">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+                <PanelContainer MinWidth="60" MinHeight="4" HorizontalAlignment="Right">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10 0 10 10">
+                <PanelContainer MinWidth="5" MinHeight="5" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+                <Control HorizontalExpand="True"/>
+                <PanelContainer MinWidth="5" MinHeight="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <PanelContainer.PanelOverride><gfx:StyleBoxFlat BackgroundColor="#CD5C5C" /></PanelContainer.PanelOverride>
+                </PanelContainer>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
 </DefaultWindow>

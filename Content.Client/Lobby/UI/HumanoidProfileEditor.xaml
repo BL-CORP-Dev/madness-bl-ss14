@@ -108,71 +108,73 @@
                                 <controls:HSpacer Spacing="10" />
                                 <controls:HSpacer Spacing="10" />
 
+                                <ScrollContainer VerticalExpand="True" HScrollEnabled="False" Margin="0 10 0 0">
+                                    <BoxContainer Name="AppearanceSettingsList" Orientation="Vertical" HorizontalExpand="True">
+                                        <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                                            <Label Text="{Loc 'humanoid-profile-editor-species-label'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3"
+                                                           VerticalAlignment="Center"
+                                                           ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                            <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" MinSize="150 0"/>
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                                            <Label Text="{Loc 'humanoid-profile-editor-age-label'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" MaxWidth="100"/>
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                                            <Label Text="{Loc 'humanoid-profile-editor-sex-label'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <OptionButton Name="SexButton" HorizontalAlignment="Right" MinSize="150 0"/>
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                                            <Label Text="{Loc 'humanoid-profile-editor-pronouns-label'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <OptionButton Name="PronounsButton" HorizontalAlignment="Right" MinSize="150 0"/>
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                                            <Label Text="{Loc 'humanoid-profile-editor-clothing'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <Button Name="ShowClothes" Pressed="True" ToggleMode="True" Text="{Loc 'humanoid-profile-editor-clothing-show'}" HorizontalAlignment="Right" MinSize="150 0"/>
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
+                                            <Label Text="{Loc 'humanoid-profile-editor-spawn-priority-label'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" MinSize="150 0"/>
+                                        </BoxContainer>
+                                        <BoxContainer Visible="False" Name="TTSContainer" Margin="0 0 0 10">
+                                            <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" VAlign="Center" />
+                                            <Control HorizontalExpand="True"/>
+                                            <OptionButton Name="VoiceButton" HorizontalAlignment="Right" MinSize="150 0"/>
+                                            <Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" Margin="5 0 0 0" />
+                                        </BoxContainer>
+                                        <controls:HSpacer Spacing="15" />
 
-                                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                                    <Label Text="{Loc 'humanoid-profile-editor-species-label'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3"
-                                                   VerticalAlignment="Center"
-                                                   ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" MinSize="150 0"/>
-                                </BoxContainer>
-                                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                                    <Label Text="{Loc 'humanoid-profile-editor-age-label'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" MaxWidth="100"/>
-                                </BoxContainer>
-                                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                                    <Label Text="{Loc 'humanoid-profile-editor-sex-label'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="SexButton" HorizontalAlignment="Right" MinSize="150 0"/>
-                                </BoxContainer>
-                                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                                    <Label Text="{Loc 'humanoid-profile-editor-pronouns-label'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="PronounsButton" HorizontalAlignment="Right" MinSize="150 0"/>
-                                </BoxContainer>
-                                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                                    <Label Text="{Loc 'humanoid-profile-editor-clothing'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <Button Name="ShowClothes" Pressed="True" ToggleMode="True" Text="{Loc 'humanoid-profile-editor-clothing-show'}" HorizontalAlignment="Right" MinSize="150 0"/>
-                                </BoxContainer>
-                                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                                    <Label Text="{Loc 'humanoid-profile-editor-spawn-priority-label'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" MinSize="150 0"/>
-                                </BoxContainer>
-                                <BoxContainer Visible="False" Name="TTSContainer" Margin="0 0 0 10">
-                                    <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" VAlign="Center" />
-                                    <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="VoiceButton" HorizontalAlignment="Right" MinSize="150 0"/>
-                                    <Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" Margin="5 0 0 0" />
-                                </BoxContainer>
-                                <controls:HSpacer Spacing="15" />
+                                        <Label Text="{Loc 'humanoid-profile-editor-skin'}"
+                                               StyleClasses="LabelBig"
+                                               FontColorOverride="#FF4500"
+                                               HorizontalAlignment="Center" />
+                                        <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                                        <controls:HSpacer Spacing="10" />
+                                        <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" Margin="0 0 0 5" />
+                                        <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" Margin="0 0 0 10" />
+                                        <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
 
-                                <Label Text="{Loc 'humanoid-profile-editor-skin'}"
-                                       StyleClasses="LabelBig"
-                                       FontColorOverride="#FF4500"
-                                       HorizontalAlignment="Center" />
-                                <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
-                                <controls:HSpacer Spacing="10" />
-                                <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" Margin="0 0 0 5" />
-                                <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" Margin="0 0 0 10" />
-                                <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
+                                        <controls:HSpacer Spacing="15" />
 
-                                <controls:HSpacer Spacing="15" />
-
-                                <Label Text="{Loc 'humanoid-profile-editor-hair'}"
-                                       StyleClasses="LabelBig"
-                                       FontColorOverride="#FF4500"
-                                       HorizontalAlignment="Center" />
-                                <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
-                                <controls:HSpacer Spacing="10" />
-                                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 10">
-                                    <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" HorizontalExpand="True"/>
-                                    <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" HorizontalExpand="True" Margin="10 0 0 0"/>
-                                </BoxContainer>
-
+                                        <Label Text="{Loc 'humanoid-profile-editor-hair'}"
+                                               StyleClasses="LabelBig"
+                                               FontColorOverride="#FF4500"
+                                               HorizontalAlignment="Center" />
+                                        <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                                        <controls:HSpacer Spacing="10" />
+                                        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 0 0 10">
+                                            <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" HorizontalExpand="True"/>
+                                            <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" HorizontalExpand="True" Margin="10 0 0 0"/>
+                                        </BoxContainer>
+                                    </BoxContainer>
+                                </ScrollContainer>
                             </BoxContainer>
                         </PanelContainer>
                     </ScrollContainer>

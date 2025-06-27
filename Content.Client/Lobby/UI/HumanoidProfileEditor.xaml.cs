@@ -98,7 +98,9 @@ namespace Content.Client.Lobby.UI
 
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
-        private Direction _previewRotation = Direction.North;
+        // Initialize with a default direction for the primary sprite view.
+        // For multiple sprites, we'll assign different directions later.
+        private Direction _previewRotation = Direction.South; // Changed default to South to match typical front view
 
         private ColorSelectorSliders _rgbSkinColorSelector;
 
@@ -162,7 +164,7 @@ namespace Content.Client.Lobby.UI
 
             ResetButton.OnPressed += args =>
             {
-                SetProfile((HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
+                SetProfile((HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
             };
 
             SaveButton.OnPressed += args =>
@@ -210,10 +212,10 @@ namespace Content.Client.Lobby.UI
 
             #region Gender
 
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int)Gender.Male);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int)Gender.Female);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int)Gender.Epicene);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int)Gender.Neuter);
 
             PronounsButton.OnItemSelected += args =>
             {
@@ -383,7 +385,7 @@ namespace Content.Client.Lobby.UI
 
             #region Eyes
 
-            EyeColorPicker.OnEyeColorPicked += newColor =>
+            /* EyeColorPicker.OnEyeColorPicked += newColor =>
             {
                 if (Profile is null)
                     return;
@@ -391,7 +393,7 @@ namespace Content.Client.Lobby.UI
                     Profile.Appearance.WithEyeColor(newColor));
                 Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
                 ReloadProfilePreview();
-            };
+            }; */
 
             #endregion Eyes
 
@@ -440,9 +442,9 @@ namespace Content.Client.Lobby.UI
 
             RefreshFlavorText();
 
-            #region Dummy
+            #region Dummy (now within Appearance tab)
 
-            SpriteRotateLeft.OnPressed += _ =>
+            /* SpriteRotateLeft.OnPressed += _ =>
             {
                 _previewRotation = _previewRotation.TurnCw();
                 SetPreviewRotation(_previewRotation);
@@ -451,7 +453,7 @@ namespace Content.Client.Lobby.UI
             {
                 _previewRotation = _previewRotation.TurnCcw();
                 SetPreviewRotation(_previewRotation);
-            };
+            }; */
 
             #endregion Dummy
 
@@ -741,8 +743,29 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, ShowClothes.Pressed);
-            SpriteView.SetEntity(PreviewDummy);
+
+            // Set entity for all four SpriteView instances
+            SpriteView1.SetEntity(PreviewDummy);
+            SpriteView2.SetEntity(PreviewDummy);
+            SpriteView3.SetEntity(PreviewDummy);
+            SpriteView4.SetEntity(PreviewDummy);
+
+            // Обновляем JobSpriteView
+            if (JobSpriteView1 != null) JobSpriteView1.SetEntity(PreviewDummy);
+            if (JobSpriteView2 != null) JobSpriteView2.SetEntity(PreviewDummy);
+            if (JobSpriteView3 != null) JobSpriteView3.SetEntity(PreviewDummy);
+            if (JobSpriteView4 != null) JobSpriteView4.SetEntity(PreviewDummy);
+
+            // Обновляем MarkingSpriteView
+            if (MarkingSpriteView1 != null) MarkingSpriteView1.SetEntity(PreviewDummy);
+            if (MarkingSpriteView2 != null) MarkingSpriteView2.SetEntity(PreviewDummy);
+            if (MarkingSpriteView3 != null) MarkingSpriteView3.SetEntity(PreviewDummy);
+            if (MarkingSpriteView4 != null) MarkingSpriteView4.SetEntity(PreviewDummy);
+
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
+
+            // Update rotation for all sprite views
+            SetPreviewRotation(_previewRotation);
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -1106,59 +1129,57 @@ namespace Content.Client.Lobby.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        var color = SkinColor.HumanSkinTone((int) Skin.Value);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                        break;
                     }
-
-                    var color = SkinColor.HumanSkinTone((int) Skin.Value);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                    break;
-                }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
 
-                    Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                    break;
-                }
+                        // set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        // set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
                     }
-
-                    var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
                 case HumanoidSkinColor.VoxFeathers:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
                     }
-
-                    var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
             }
 
             ReloadProfilePreview();
@@ -1252,6 +1273,8 @@ namespace Content.Client.Lobby.UI
             if (!IsDirty)
                 return;
 
+            // This only applies to the main preview entity, not the individual SpriteViews directly.
+            // The SpriteViews simply display the PreviewDummy.
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
 
@@ -1348,53 +1371,53 @@ namespace Content.Client.Lobby.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-
-                    break;
-                }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
 
-                    // set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
 
-                    // set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.VoxFeathers:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
-
-                    break;
-                }
             }
 
         }
@@ -1555,7 +1578,7 @@ namespace Content.Client.Lobby.UI
             }
 
             Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
+            /* EyeColorPicker.SetData(Profile.Appearance.EyeColor); */
         }
 
         private void UpdateSaveButton()
@@ -1566,7 +1589,23 @@ namespace Content.Client.Lobby.UI
 
         private void SetPreviewRotation(Direction direction)
         {
-            SpriteView.OverrideDirection = (Direction) ((int) direction % 4 * 2);
+            // Обновляем основные SpriteView (для вкладки Appearance)
+            SpriteView1.OverrideDirection = Direction.South;
+            SpriteView2.OverrideDirection = Direction.North;
+            SpriteView3.OverrideDirection = Direction.East;
+            SpriteView4.OverrideDirection = Direction.West;
+
+            // Добавляем обновление для JobSpriteView
+            if (JobSpriteView1 != null) JobSpriteView1.OverrideDirection = Direction.South;
+            if (JobSpriteView2 != null) JobSpriteView2.OverrideDirection = Direction.North;
+            if (JobSpriteView3 != null) JobSpriteView3.OverrideDirection = Direction.East;
+            if (JobSpriteView4 != null) JobSpriteView4.OverrideDirection = Direction.West;
+
+            // Добавляем обновление для MarkingSpriteView
+            if (MarkingSpriteView1 != null) MarkingSpriteView1.OverrideDirection = Direction.South;
+            if (MarkingSpriteView2 != null) MarkingSpriteView2.OverrideDirection = Direction.North;
+            if (MarkingSpriteView3 != null) MarkingSpriteView3.OverrideDirection = Direction.East;
+            if (MarkingSpriteView4 != null) MarkingSpriteView4.OverrideDirection = Direction.West;
         }
 
         private void RandomizeEverything()
@@ -1589,9 +1628,11 @@ namespace Content.Client.Lobby.UI
             if (_imaging)
                 return;
 
-            var dir = SpriteView.OverrideDirection ?? Direction.South;
+            // This now exports the primary SpriteView's direction or whatever logic you apply to it.
+            // If you want to export all four, you'd need to modify this to iterate through them.
+            // For now, it will just export whatever SpriteView1 is showing.
+            var dir = SpriteView1.OverrideDirection ?? Direction.South;
 
-            // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
             _imaging = true;
             await _entManager.System<ContentSpriteSystem>().Export(PreviewDummy, dir, includeId: false);
             _imaging = false;

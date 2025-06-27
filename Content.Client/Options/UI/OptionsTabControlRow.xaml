@@ -1,18 +1,52 @@
 <Control xmlns="https://spacestation14.io"
-         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <controls:StripeBack HasBottomEdge="False">
-        <BoxContainer Orientation="Horizontal" Align="End" Margin="2">
-            <Button Name="DefaultButton"
-                    Text="{Loc 'ui-options-default'}"
-                    TextAlign="Center"
-                    Margin="8 0" />
+        <BoxContainer Orientation="Horizontal" Align="End" Margin="10" SeparationOverride="8">
+            <PanelContainer MinWidth="100" MinHeight="40">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#AA0000" />
+                </PanelContainer.PanelOverride>
+                <Button Name="DefaultButton"
+                        Text="{Loc 'ui-options-default'}"
+                        TextAlign="Center"
+                        Margin="2"
+                        HorizontalExpand="True" VerticalExpand="True">
+                    <Button.StyleBoxOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#202020" />
+                    </Button.StyleBoxOverride>
+                </Button>
+            </PanelContainer>
 
-            <Button Name="ResetButton"
-                    Text="{Loc 'ui-options-reset-all'}"
-                    StyleClasses="Caution" />
-            <Button Name="ApplyButton"
-                    Text="{Loc 'ui-options-apply'}"
-                    StyleClasses="OpenLeft" />
+            <PanelContainer MinWidth="100" MinHeight="40">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#AA0000" />
+                </PanelContainer.PanelOverride>
+                <Button Name="ResetButton"
+                        Text="{Loc 'ui-options-reset-all'}"
+                        StyleClasses="Caution"
+                        Margin="2"
+                        HorizontalExpand="True" VerticalExpand="True">
+                    <Button.StyleBoxOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#202020" />
+                    </Button.StyleBoxOverride>
+                </Button>
+            </PanelContainer>
+
+            <PanelContainer MinWidth="100" MinHeight="40">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#AA0000" />
+                </PanelContainer.PanelOverride>
+                <Button Name="ApplyButton"
+                        Text="{Loc 'ui-options-apply'}"
+                        StyleClasses="OpenLeft"
+                        Margin="2"
+                        HorizontalExpand="True" VerticalExpand="True">
+                    <Button.StyleBoxOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#202020" />
+                    </Button.StyleBoxOverride>
+                </Button>
+            </PanelContainer>
         </BoxContainer>
     </controls:StripeBack>
 </Control>

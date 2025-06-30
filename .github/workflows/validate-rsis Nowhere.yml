@@ -1,0 +1,48 @@
+name: RSI Validator Nowhere
+
+on:
+  push:
+    branches: [ master, staging, stable ]
+  merge_group:
+  pull_request:
+    paths:
+      - '**.rsi/**'
+
+jobs:
+  validate_rsis:
+    name: Validate RSIs
+    if: ${{ vars.SECRETSLINK != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Download parts
+        run: |
+          git clone "${{ secrets.NOWHERE }}"
+          mv Nowhere/_PrivateResources/_PPrototypes Resources/Prototypes/
+          mv Nowhere/_PrivateResources/_PTextures Resources/Textures/
+          mv Nowhere/_PrivateShared Content.Shared/_PrivateShared
+          mv Nowhere/_PrivateServer Content.Server/_PrivateServer
+          mv Nowhere/_PrivateClient Content.Client/_PrivateClient
+      - name: Setup Submodule
+        run: git submodule update --init
+      # Corvax-Secrets-Start
+      - name: Setup secrets
+        env:
+          SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
+        if: ${{ env.SSH_KEY != '' }}
+        run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "HOST *" > ~/.ssh/config
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          git -c submodule.Secrets.update=checkout submodule update --init
+      # Corvax-Secrets-End
+      - name: Pull engine updates
+        uses: space-wizards/submodule-dependency@v0.1.5
+      - name: Install Python dependencies
+        run: |
+          pip3 install --ignore-installed --user pillow jsonschema
+      - name: Validate RSIs
+        run: |
+          python3 RobustToolbox/Schemas/validate_rsis.py Resources/

@@ -4,6 +4,18 @@
   name: admin observer
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    sprite: _Madness/Mobs/Ghost/ghost_employers.rsi
+    layers:
+    - state: animated_1
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          animated_1: Material
+          animated_2: Material
+          animated_3: Material
+          animated_4: Material
   - type: ContentEye
     maxZoom: 8.916104, 8.916104
   - type: Tag

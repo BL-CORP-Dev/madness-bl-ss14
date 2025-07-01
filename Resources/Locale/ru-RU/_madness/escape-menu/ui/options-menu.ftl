@@ -9,3 +9,8 @@ humanoid-profile-editor-jobs = Профессии
 humanoid-profile-editor-antag = Роли антагонистов
 humanoid-profile-editor-traits = Особенности
 humanoid-profile-editor-markings = Особые отметки
+
+ui-escape-little-label =
+    Сдавайся, если хочешь.
+       Я уже перестал в тебя верить
+ui-escape-big-label = МЕНЮ

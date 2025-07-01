@@ -1,4 +1,5 @@
-﻿<ui1:EscapeMenu xmlns="https://spacestation14.io"
+﻿<!-- _Madness Edit ALL XAML -->
+<ui1:EscapeMenu xmlns="https://spacestation14.io"
                 xmlns:changelog="clr-namespace:Content.Client.Changelog"
                 xmlns:ui="clr-namespace:Content.Client.Voting.UI"
                 xmlns:ui1="clr-namespace:Content.Client.Options.UI"

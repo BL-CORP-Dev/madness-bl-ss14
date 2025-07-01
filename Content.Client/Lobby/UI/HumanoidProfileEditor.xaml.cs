@@ -98,7 +98,7 @@ namespace Content.Client.Lobby.UI
 
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
-        private Direction _previewRotation = Direction.South; // Changed default to South to match typical front view
+        private Direction _previewRotation = Direction.South; // _Madness Edit (Changed default to South to match typical front view)
 
         private ColorSelectorSliders _rgbSkinColorSelector;
 
@@ -162,7 +162,7 @@ namespace Content.Client.Lobby.UI
 
             ResetButton.OnPressed += args =>
             {
-                SetProfile((HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
+                SetProfile((HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, _preferencesManager.Preferences?.SelectedCharacterIndex);
             };
 
             SaveButton.OnPressed += args =>
@@ -210,10 +210,10 @@ namespace Content.Client.Lobby.UI
 
             #region Gender
 
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int)Gender.Male);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int)Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int)Gender.Epicene);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int)Gender.Neuter);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
+            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
 
             PronounsButton.OnItemSelected += args =>
             {
@@ -383,6 +383,7 @@ namespace Content.Client.Lobby.UI
 
             #region Eyes
 
+            // _Madness Edit Start
             /* EyeColorPicker.OnEyeColorPicked += newColor =>
             {
                 if (Profile is null)
@@ -392,6 +393,7 @@ namespace Content.Client.Lobby.UI
                 Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
                 ReloadProfilePreview();
             }; */
+            // _Madness Edit End
 
             #endregion Eyes
 
@@ -440,6 +442,7 @@ namespace Content.Client.Lobby.UI
 
             RefreshFlavorText();
 
+            // _Madness Edit Start
             #region Dummy (now within Appearance tab)
 
             /* SpriteRotateLeft.OnPressed += _ =>
@@ -452,6 +455,7 @@ namespace Content.Client.Lobby.UI
                 _previewRotation = _previewRotation.TurnCcw();
                 SetPreviewRotation(_previewRotation);
             }; */
+            // _Madness Edit End
 
             #endregion Dummy
 
@@ -742,6 +746,7 @@ namespace Content.Client.Lobby.UI
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, ShowClothes.Pressed);
 
+            // _Madness Edit Start
             // Set entity for all four SpriteView instances
             SpriteView1.SetEntity(PreviewDummy);
             SpriteView2.SetEntity(PreviewDummy);
@@ -764,6 +769,7 @@ namespace Content.Client.Lobby.UI
 
             // Update rotation for all sprite views
             SetPreviewRotation(_previewRotation);
+            // _Madness Edit End
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -1127,57 +1133,59 @@ namespace Content.Client.Lobby.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
+                {
+                    if (!Skin.Visible)
                     {
-                        if (!Skin.Visible)
-                        {
-                            Skin.Visible = true;
-                            RgbSkinColorContainer.Visible = false;
-                        }
-
-                        var color = SkinColor.HumanSkinTone((int) Skin.Value);
-
-                        Markings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                        break;
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
                     }
+
+                    var color = SkinColor.HumanSkinTone((int) Skin.Value);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                    break;
+                }
                 case HumanoidSkinColor.Hues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
                     {
-                        if (!RgbSkinColorContainer.Visible)
-                        {
-                            Skin.Visible = false;
-                            RgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
                     }
+
+                    Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                    break;
+                }
                 case HumanoidSkinColor.TintedHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
                     {
-                        if (!RgbSkinColorContainer.Visible)
-                        {
-                            Skin.Visible = false;
-                            RgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
                     }
+
+                    var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
                 case HumanoidSkinColor.VoxFeathers:
+                {
+                    if (!RgbSkinColorContainer.Visible)
                     {
-                        if (!RgbSkinColorContainer.Visible)
-                        {
-                            Skin.Visible = false;
-                            RgbSkinColorContainer.Visible = true;
-                        }
-
-                        var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
-
-                        Markings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                        break;
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
                     }
+
+                    var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
             }
 
             ReloadProfilePreview();
@@ -1367,53 +1375,53 @@ namespace Content.Client.Lobby.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
+                {
+                    if (!Skin.Visible)
                     {
-                        if (!Skin.Visible)
-                        {
-                            Skin.Visible = true;
-                            RgbSkinColorContainer.Visible = false;
-                        }
-
-                        Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-
-                        break;
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
                     }
+
+                    Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
                 case HumanoidSkinColor.Hues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
                     {
-                        if (!RgbSkinColorContainer.Visible)
-                        {
-                            Skin.Visible = false;
-                            RgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
                     }
+
+                    // set the RGB values to the direct values otherwise
+                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
                 case HumanoidSkinColor.TintedHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
                     {
-                        if (!RgbSkinColorContainer.Visible)
-                        {
-                            Skin.Visible = false;
-                            RgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
                     }
+
+                    // set the RGB values to the direct values otherwise
+                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
                 case HumanoidSkinColor.VoxFeathers:
+                {
+                    if (!RgbSkinColorContainer.Visible)
                     {
-                        if (!RgbSkinColorContainer.Visible)
-                        {
-                            Skin.Visible = false;
-                            RgbSkinColorContainer.Visible = true;
-                        }
-
-                        _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
-
-                        break;
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
                     }
+
+                    _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
             }
 
         }
@@ -1574,7 +1582,7 @@ namespace Content.Client.Lobby.UI
             }
 
             Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-            /* EyeColorPicker.SetData(Profile.Appearance.EyeColor); */
+            /* EyeColorPicker.SetData(Profile.Appearance.EyeColor); */ // _Madness Edit
         }
 
         private void UpdateSaveButton()
@@ -1585,6 +1593,7 @@ namespace Content.Client.Lobby.UI
 
         private void SetPreviewRotation(Direction direction)
         {
+            // _Madness Edit Start
             // Обновляем основные SpriteView (для вкладки Appearance)
             SpriteView1.OverrideDirection = Direction.South;
             SpriteView2.OverrideDirection = Direction.North;
@@ -1602,6 +1611,7 @@ namespace Content.Client.Lobby.UI
             if (MarkingSpriteView2 != null) MarkingSpriteView2.OverrideDirection = Direction.North;
             if (MarkingSpriteView3 != null) MarkingSpriteView3.OverrideDirection = Direction.East;
             if (MarkingSpriteView4 != null) MarkingSpriteView4.OverrideDirection = Direction.West;
+            // _Madness Edit End
         }
 
         private void RandomizeEverything()
@@ -1624,10 +1634,7 @@ namespace Content.Client.Lobby.UI
             if (_imaging)
                 return;
 
-            // This now exports the primary SpriteView's direction or whatever logic you apply to it.
-            // If you want to export all four, you'd need to modify this to iterate through them.
-            // For now, it will just export whatever SpriteView1 is showing.
-            var dir = SpriteView1.OverrideDirection ?? Direction.South;
+            var dir = SpriteView1.OverrideDirection ?? Direction.South; // _Madness Edit
 
             // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
             _imaging = true;

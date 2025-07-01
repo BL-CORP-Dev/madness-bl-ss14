@@ -8,14 +8,14 @@
         <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
             <PanelContainer VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                    <gfx:StyleBoxFlat BackgroundColor="#151515" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Vertical" Margin="10 10 10 10" VerticalExpand="True">
                     <Label Text="{Loc 'ui-options-general-ui-style'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <ui:OptionDropDown Name="DropDownHudTheme" Title="{Loc 'ui-options-hud-theme'}" />
                     <ui:OptionDropDown Name="DropDownHudLayout" Title="{Loc 'ui-options-hud-layout'}" />
 
@@ -23,18 +23,18 @@
 
                     <Label Text="{Loc 'ui-options-general-discord'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <CheckBox Name="DiscordRich" Text="{Loc 'ui-options-discordrich'}" />
 
                     <controls:HSpacer Spacing="15" />
 
                     <Label Text="{Loc 'ui-options-general-speech'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <CheckBox Name="ShowOocPatronColor" Text="{Loc 'ui-options-show-ooc-patron-color'}" />
                     <CheckBox Name="ShowLoocAboveHeadCheckBox" Text="{Loc 'ui-options-show-looc-on-head'}" />
                     <CheckBox Name="FancySpeechBubblesCheckBox" Text="{Loc 'ui-options-fancy-speech'}" />
@@ -44,9 +44,9 @@
 
                     <Label Text="{Loc 'ui-options-general-cursor'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <CheckBox Name="ShowHeldItemCheckBox" Text="{Loc 'ui-options-show-held-item'}" />
                     <CheckBox Name="ShowCombatModeIndicatorsCheckBox" Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
 
@@ -54,12 +54,12 @@
 
                     <Label Text="{Loc 'ui-options-general-storage'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <CheckBox Name="OpaqueStorageWindowCheckBox" Text="{Loc 'ui-options-opaque-storage-window'}" />
                     <CheckBox Name="StaticStorageUI" Text="{Loc 'ui-options-static-storage-ui'}" />
-                    </BoxContainer>
+                </BoxContainer>
             </PanelContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

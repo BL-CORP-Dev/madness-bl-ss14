@@ -7,15 +7,15 @@
         <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
             <PanelContainer VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                    <gfx:StyleBoxFlat BackgroundColor="#151515" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Vertical" Margin="10 10 10 10" VerticalExpand="True">
 
                     <Label Text="{Loc 'ui-options-accessability-header-visuals'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
                         <CheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
                         <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
@@ -32,9 +32,9 @@
 
                     <Label Text="{Loc 'ui-options-accessability-header-content'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
                         <CheckBox Name="AutoFillHighlightsCheckBox" Text="{Loc 'ui-options-auto-fill-highlights'}" />
                         <ui:OptionColorSlider Name="HighlightsColorSlider"

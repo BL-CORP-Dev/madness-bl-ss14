@@ -98,8 +98,6 @@ namespace Content.Client.Lobby.UI
 
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
-        // Initialize with a default direction for the primary sprite view.
-        // For multiple sprites, we'll assign different directions later.
         private Direction _previewRotation = Direction.South; // Changed default to South to match typical front view
 
         private ColorSelectorSliders _rgbSkinColorSelector;
@@ -1273,8 +1271,6 @@ namespace Content.Client.Lobby.UI
             if (!IsDirty)
                 return;
 
-            // This only applies to the main preview entity, not the individual SpriteViews directly.
-            // The SpriteViews simply display the PreviewDummy.
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, newName);
         }
 
@@ -1633,6 +1629,7 @@ namespace Content.Client.Lobby.UI
             // For now, it will just export whatever SpriteView1 is showing.
             var dir = SpriteView1.OverrideDirection ?? Direction.South;
 
+            // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
             _imaging = true;
             await _entManager.System<ContentSpriteSystem>().Export(PreviewDummy, dir, includeId: false);
             _imaging = false;

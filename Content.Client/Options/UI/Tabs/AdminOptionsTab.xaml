@@ -7,15 +7,15 @@
         <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
             <PanelContainer VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1a1a1a" />
+                    <gfx:StyleBoxFlat BackgroundColor="#151515" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Vertical" Margin="10 10 10 10" VerticalExpand="True">
 
                     <Label Text="{Loc 'ui-options-admin-player-panel'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
                         <ui:OptionDropDown Name="DropDownPlayerTabSymbolSetting" Title="{Loc 'ui-options-admin-player-tab-symbol-setting'}" />
                         <ui:OptionDropDown Name="DropDownPlayerTabRoleSetting" Title="{Loc 'ui-options-admin-player-tab-role-setting'}" />
@@ -26,9 +26,9 @@
 
                     <Label Text="{Loc 'ui-options-admin-overlay-title'}"
                            StyleClasses="LabelBig"
-                           FontColorOverride="#FF4500"
+                           FontColorOverride="#FFFFFF"
                            HorizontalAlignment="Center" />
-                    <controls:HLine Color="#FF4500" Thickness="2" Margin="0 5 0 5" />
+                    <controls:HLine Color="#AA0000" Thickness="2" Margin="0 5 0 5" />
                     <BoxContainer Orientation="Vertical" Margin="0 3 0 0">
                         <ui:OptionDropDown Name="DropDownOverlayAntagFormat" Title="{Loc 'ui-options-admin-overlay-antag-format'}" />
                         <ui:OptionDropDown Name="DropDownOverlayAntagSymbol" Title="{Loc 'ui-options-admin-overlay-antag-symbol'}" />

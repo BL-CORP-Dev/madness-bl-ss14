@@ -45,9 +45,9 @@ ui-options-interface-label = Интерфейс
 
 ## Graphics menu
 
-ui-options-auto-fill-highlights = Auto-fill the highlights with the character's information
-ui-options-highlights-color = Highlighs color:
-ui-options-highlights-color-example = This is an highlighted text!
+ui-options-auto-fill-highlights = Автоматическое заполнение выделенным текстом информацией о персонаже
+ui-options-highlights-color = Цвет выделенного текста:
+ui-options-highlights-color-example = Это выделенный текст!
 ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором
 ui-options-show-combat-mode-indicators = Показать индикатор боевого режима рядом с курсором
 ui-options-opaque-storage-window = Непрозрачность окна хранилища
@@ -83,7 +83,9 @@ ui-options-hud-layout-separated = Разделённый
 ui-options-vp-stretch = Растянуть изображение для соответствия окну игры
 ui-options-vp-scale = Фиксированный масштаб окна игры:
 ui-options-vp-scale-value = x{ $scale }
-ui-options-vp-integer-scaling = Использовать целочисленное масштабирование (может вызывать появление чёрных полос/обрезания)
+ui-options-vp-integer-scaling =
+    Использовать целочисленное масштабирование
+    (может вызывать появление чёрных полос/обрезания)
 ui-options-vp-integer-scaling-tooltip =
     Если эта опция включена, область просмотра будет масштабироваться,
     используя целочисленное значение при определённых разрешениях. Хотя это и

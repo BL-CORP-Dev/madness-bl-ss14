@@ -14,8 +14,8 @@
     <ServerGarbageCollection>true</ServerGarbageCollection>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Discord.Net" />
     <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
+    <PackageReference Include="NetCord" />
   </ItemGroup>
   <Import Project="..\Content.Shared\_PrivateShared\Madness_GlobalDefines.props" Condition="Exists('..\Content.Shared\_PrivateShared\Madness_GlobalDefines.props')" />
   <ItemGroup>

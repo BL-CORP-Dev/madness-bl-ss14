@@ -1,9 +1,9 @@
-using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Zombies;
 using Content.Shared.Administration;
+using Content.Server.Clothing.Systems;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind.Components;
@@ -20,6 +20,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ZombieSystem _zombie = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private readonly OutfitSystem _outfit = default!;
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultTraitorRule = "Traitor";
@@ -39,7 +40,7 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
 
-    // private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn"; // _Madness Edit
+    private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn";
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -68,7 +69,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName, Loc.GetString("admin-verb-make-traitor")),
+            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
         };
         args.Verbs.Add(traitor);
 
@@ -126,7 +127,7 @@ public sealed partial class AdminVerbSystem
             Act = () =>
             {
                 // pirates just get an outfit because they don't really have logic associated with them
-                SetOutfitCommand.SetOutfit(args.Target, PirateGearId, EntityManager);
+                _outfit.SetOutfit(args.Target, PirateGearId);
             },
             Impact = LogImpact.High,
             Message = string.Join(": ", pirateName, Loc.GetString("admin-verb-make-pirate")),
@@ -163,33 +164,28 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(thief);
 
-        // _Madness Edit Start
+        var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
+        Verb paradox = new()
+        {
+            Text = paradoxCloneName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ParadoxClone"),
+            Act = () =>
+            {
+                var ruleEnt = _gameTicker.AddGameRule(_paradoxCloneRuleId);
 
-        // var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
-        // Verb paradox = new()
-        // {
-        //     Text = paradoxCloneName,
-        //     Category = VerbCategory.Antag,
-        //     Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ParadoxClone"),
-        //     Act = () =>
-        //     {
-        //         var ruleEnt = _gameTicker.AddGameRule(_paradoxCloneRuleId);
+                if (!TryComp<ParadoxCloneRuleComponent>(ruleEnt, out var paradoxCloneRuleComp))
+                    return;
 
-        //         if (!TryComp<ParadoxCloneRuleComponent>(ruleEnt, out var paradoxCloneRuleComp))
-        //             return;
+                paradoxCloneRuleComp.OriginalBody = args.Target; // override the target player
 
-        //         paradoxCloneRuleComp.OriginalBody = args.Target; // override the target player
+                _gameTicker.StartGameRule(ruleEnt);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", paradoxCloneName, Loc.GetString("admin-verb-make-paradox-clone")),
+        };
 
-        //         _gameTicker.StartGameRule(ruleEnt);
-        //     },
-        //     Impact = LogImpact.High,
-        //     Message = string.Join(": ", paradoxCloneName, Loc.GetString("admin-verb-make-paradox-clone")),
-        // };
-
-        // if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
-        //     args.Verbs.Add(paradox);
-
-        // _Madness Edit End
-
+        if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
+            args.Verbs.Add(paradox);
     }
 }

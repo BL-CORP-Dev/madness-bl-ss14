@@ -43,7 +43,7 @@
   id: BaseThiefStealAnimalObjective
   components:
   - type: StealCondition
-    verifyMapExistence: false
+    verifyMapExistence: true
     checkAlive: true
     objectiveNoOwnerText: objective-condition-steal-title-alive-no-owner
     descriptionText: objective-condition-thief-animal-description
@@ -136,22 +136,20 @@
   - type: Objective
     difficulty: 0.7
 
-
-
-# - type: entity
-#   parent: BaseThiefStealCollectionObjective
-#   id: LAMPStealCollectionObjective
-#   components:
-#   - type: SpeciesRequirement
-#     allowedSpecies:
-#     - Moth
-#   - type: StealCondition
-#     stealGroup: LAMP
-#     minCollectionSize: 1
-#     maxCollectionSize: 10
-#     verifyMapExistence: true
-#   - type: Objective
-#     difficulty: 0.5 # just for fun, collectings LAMP on Moth
+- type: entity
+  parent: BaseThiefStealCollectionObjective
+  id: LAMPStealCollectionObjective
+  components:
+  - type: SpeciesRequirement
+    allowedSpecies:
+    - Moth
+  - type: StealCondition
+    stealGroup: LAMP
+    minCollectionSize: 1
+    maxCollectionSize: 10
+    verifyMapExistence: true
+  - type: Objective
+    difficulty: 0.5 # just for fun, collectings LAMP on Moth
 
 # steal item
 

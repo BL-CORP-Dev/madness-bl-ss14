@@ -3107,6 +3107,10 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: Access
+    tags: 
+    - NuclearOperative
+    - SyndicateAgent
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
@@ -3618,11 +3622,11 @@
   - type: Emoting
   - type: BodyEmotes
     soundsId: Nymph
-  # - type: Reform
-  #   actionPrototype: DionaReformAction
-  #   reformTime: 10
-  #   popupText: diona-reform-attempt
-  #   reformPrototype: MobDionaReformed
+  - type: Reform
+    actionPrototype: DionaReformAction
+    reformTime: 10
+    popupText: diona-reform-attempt
+    reformPrototype: MobDionaReformed
 
 - type: entity
   parent: MobDionaNymph
@@ -3786,3 +3790,6 @@
     - DoorBumpOpener
   - type: StatusIcon # marks them as crew
     bounds: -0.5,-0.5,0.5,0.5
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

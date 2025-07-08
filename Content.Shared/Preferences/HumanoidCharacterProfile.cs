@@ -214,14 +214,18 @@ namespace Content.Shared.Preferences
         }
 
         // TODO: This should eventually not be a visual change only.
-        public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null, string species = SharedHumanoidAppearanceSystem.DefaultSpecies) // _Madness Edit
+        public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
             var random = IoCManager.Resolve<IRobustRandom>();
 
-            var Species = species; // _Madness Edit
+            var species = random.Pick(prototypeManager
+                .EnumeratePrototypes<SpeciesPrototype>()
+                .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+                .ToArray()
+            ).ID;
 
-            return RandomWithSpecies(Species); // _Madness Edit
+            return RandomWithSpecies(species);
         }
 
         public static HumanoidCharacterProfile RandomWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)

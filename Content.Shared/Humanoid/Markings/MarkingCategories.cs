@@ -13,8 +13,8 @@ namespace Content.Shared.Humanoid.Markings
         HeadSide,
         Snout,
         Chest,
-        UndergarmentTop,
-        UndergarmentBottom,
+        // UndergarmentTop, // _Madness Edit
+        // UndergarmentBottom, // _Madness Edit
         Arms,
         Legs,
         Tail,
@@ -35,8 +35,8 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,
                 HumanoidVisualLayers.Snout => MarkingCategories.Snout,
                 HumanoidVisualLayers.Chest => MarkingCategories.Chest,
-                HumanoidVisualLayers.UndergarmentTop => MarkingCategories.UndergarmentTop,
-                HumanoidVisualLayers.UndergarmentBottom => MarkingCategories.UndergarmentBottom,
+                // HumanoidVisualLayers.UndergarmentTop => MarkingCategories.UndergarmentTop, // _Madness Edit
+                // HumanoidVisualLayers.UndergarmentBottom => MarkingCategories.UndergarmentBottom, // _Madness Edit
                 HumanoidVisualLayers.RArm => MarkingCategories.Arms,
                 HumanoidVisualLayers.LArm => MarkingCategories.Arms,
                 HumanoidVisualLayers.RHand => MarkingCategories.Arms,

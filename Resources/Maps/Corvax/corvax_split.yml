@@ -249479,24 +249479,24 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.5,-12.5
       parent: 10755
-- proto: SyndieDisasterVictimSpawner
-  entities:
-  - uid: 47575
-    components:
-    - type: Transform
-      pos: 2.5,-4.5
-      parent: 46542
-    - type: RandomSpawner
-      prototypes:
-      - MobSkeletonPirate
-  - uid: 47576
-    components:
-    - type: Transform
-      pos: -4.5,-9.5
-      parent: 46542
-    - type: RandomSpawner
-      prototypes:
-      - MobSkeletonPirate
+# - proto: SyndieDisasterVictimSpawner
+#   entities:
+#   - uid: 47575
+#     components:
+#     - type: Transform
+#       pos: 2.5,-4.5
+#       parent: 46542
+#     - type: RandomSpawner
+#       prototypes:
+#       - MobSkeletonPirate
+#   - uid: 47576
+#     components:
+#     - type: Transform
+#       pos: -4.5,-9.5
+#       parent: 46542
+#     - type: RandomSpawner
+#       prototypes:
+#       - MobSkeletonPirate
 - proto: Syringe
   entities:
   - uid: 8682

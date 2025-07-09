@@ -11,6 +11,10 @@
       "name": "full"
     },
     {
+      "name": "full_64",
+      "directions": 4
+    },
+    {
       "name": "head_f",
       "directions": 4
     },

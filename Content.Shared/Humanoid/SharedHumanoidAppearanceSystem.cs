@@ -45,7 +45,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     private ISharedSponsorsManager? _sponsors;
 
     [ValidatePrototypeId<SpeciesPrototype>]
-    public const string DefaultSpecies = "Human";
+    public const string DefaultSpecies = "Grant"; // _Madness Edit
     // Corvax-TTS-Start
     public const string DefaultVoice = "Garithos";
     public static readonly Dictionary<Sex, string> DefaultSexVoice = new()

@@ -8,14 +8,14 @@ namespace Content.IntegrationTests.Tests.Strip;
 
 public sealed class StrippableTest : InteractionTest
 {
-    protected override string PlayerPrototype => "MobHuman";
+    protected override string PlayerPrototype => "MobGrant"; // _Madness Edit
 
     [Test]
     public async Task DragDropOpensStrip()
     {
         // Spawn one tile away
         TargetCoords = SEntMan.GetNetCoordinates(new EntityCoordinates(MapData.MapUid, 1, 0));
-        await SpawnTarget("MobHuman");
+        await SpawnTarget("MobGrant"); // _Madness Edit
 
         var userInterface = Comp<UserInterfaceComponent>(Target);
         Assert.That(userInterface.Actors.Count == 0);

@@ -7,7 +7,7 @@
   - CommonBackpack
   - Survival
   - Trinkets
-  - GroupSpeciesBreathTool
+  # - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobPilot
@@ -20,7 +20,7 @@
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
-  - GroupSpeciesBreathTool
+  # - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBrigmedic
